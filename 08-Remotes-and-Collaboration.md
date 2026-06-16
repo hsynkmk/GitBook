@@ -32,13 +32,15 @@ your fork, `upstream` = the original repo — see [forks, ch.15](15-Pull-Request
 
 ```mermaid
 flowchart LR
-    subgraph Local [Your machine]
-      WT[working tree] --> Local[(local repo\n+ remote-tracking branches)]
+    subgraph MyMachine [Your machine]
+      WT[Working tree] --> Repo["Local repo<br/>+ remote-tracking branches"]
     end
-    Local -->|git push| Remote[(origin\nGitHub)]
-    Remote -->|git fetch / pull| Local
+
+    Repo -->|git push| Remote["origin<br/>GitHub"]
+    Remote -->|git fetch / pull| Repo
+
     subgraph Team
-      T1[(Teammate's local)] <--> Remote
+      Teammate["Teammate's local"] <--> Remote
     end
 ```
 
